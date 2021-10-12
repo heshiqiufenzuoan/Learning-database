@@ -1,0 +1,126 @@
+1.问：为什么使用数据库？什么时候会使用到数据库？关系型数据库和非关系型数据库的区别？
+ 答：（1）首先使用数据库是为了存储数据，其次数据库可以满足应用的共享和安全方面的要求；第二，数据库技术能够方便智能化的分析，产生新的有用的信息。最后最重要的是存取速度快，但是不能保存。
+（2）存储数据、查询日志、嵌入式系统。
+（3）关系型数据库（SQL）是指使用关系模型来组织数据的数据库，常见的MySQL和Oracle就是关系型数据库。关系型数据库结构非常接近于正常的开发逻辑，支持通用的SQL语言，并且由表结构组成，文件结构一致；关系型数据库提供对事情五点支持，能保证系统中事务的正确执行，同时提供事务的恢复，回滚，并发控制和死锁问题的解决。数据存储在磁盘中安全可靠。
+非关系型数据库NoSQL，数据以对象的形式存储在数据库中，二对象之间的关系通过每个对象自身的属性来决定，常用于存储非结构化的数据。例如：redis就是非关系型数据库。
+优点：速度高、效率快；易于维护，成本低；扩展简单，高并发，高稳定性，成本低；可以实现数据的分布式处理。
+
+
+2.问：谈谈你对mysql的了解，为什么有那么多的公司和开发人员使用MYSQL？
+ 答：MySQL同Oracle都属于关系型数据库，在WEB应用方面，MySQL是很好的应用软件之一，在Java企业应用级开发中非常有用，最重要其免费，方便扩展。
+(2)使用多是因为稳定，而Linux也稳定，所以使用的公司多；轻量级，开源，易用，免费；
+LAMP（Linux+apache+MySQL+PHP）和LNMP（Linux+ngnix+MySQL+php）是目前Linux服务器使用最多的PHP架构。
+	
+3.问：MYSQL支持事务吗？
+答：在不同的状态下不一样，主要看存储引擎。若缺省模式下，不使用。
+
+4.问：用你的计算机，连接上服务端地址为10.10.141.90的mysql数据库，需要哪些信息？
+ 答：需要密码、服务端地址
+mysql -u root -h10.10.141.90 -p #### -p*******
+
+5.问：mysql命令行中，执行以下两条命令，有什么区别？
+	SHOW DATABASES;
+	show databases;
+ 答：效果一样，MySQL不区分大小写。
+
+6.问：mysql数据库性能下降,想找到哪些sql耗时较长
+
+ 
+7.问：操作题：执行命令 HELP SHOW; 显示允许的SHOW语句。
+
+8.问：mysql中varchar与char的区别以及varchar(50)，int(20)中的50、20代表的涵义。
+  
+9.问：VARCHAR(N) 或 CHAR(N)中的N含义
+
+
+10.问：若一张表中只有一个字段VARCHAR(N)类型，utf8编码，则N最大值为多少(精确到数量级即可)：
+
+
+11.问：有一字段：id tinyint(3)，我现在插入该列值为1234.5678，实际插入值为多少？
+答：1234.56
+
+12.问：mysql命令行中，以什么符号结束命令？以什么符号取消命令？以什么符号退出命令行？
+ ctrl+c
+\c
+exit
+
+13.问：通配符有哪些？
+答：%、-、[charlist]   
+
+14.问：什么是关键字（key word）？请举例MYSQL中的关键字有哪些？
+   答：关键字作为mysql语言组成部分的一个保留字。决不要用关键字命名一个表或者列。
+ADD 	ALL 	ALTER
+ANALYZE 	AND 	AS
+ASC 	ASENSITIVE 	BEFORE
+BETWEEN 	BIGINT 	BINARY
+BLOB 	BOTH 	BY
+CALL 	CASCADE 	CASE
+CHANGE 	CHAR 	CHARACTER
+CHECK 	COLLATE 	COLUMN
+CONDITION 	CONNECTION 	CONSTRAINT
+CONTINUE 	CONVERT 	CREATE
+CROSS 	CURRENT_DATE 	CURRENT_TIME
+CURRENT_TIMESTAMP 	CURRENT_USER 	CURSOR
+DATABASE 	DATABASES 	DAY_HOUR
+DAY_MICROSECOND 	DAY_MINUTE 	DAY_SECOND
+DEC 	DECIMAL 	DECLARE
+DEFAULT 	DELAYED 	DELETE
+DESC 	DESCRIBE 	DETERMINISTIC
+DISTINCT 	DISTINCTROW 	DIV
+DOUBLE 	DROP 	DUAL
+EACH 	ELSE 	ELSEIF
+ENCLOSED 	ESCAPED 	EXISTS
+EXIT 	EXPLAIN 	FALSE
+FETCH 	FLOAT 	FLOAT4
+FLOAT8 	FOR 	FORCE
+FOREIGN 	FROM 	FULLTEXT
+GOTO 	GRANT 	GROUP
+HAVING 	HIGH_PRIORITY 	HOUR_MICROSECOND
+HOUR_MINUTE 	HOUR_SECOND 	IF
+IGNORE 	IN 	INDEX
+INFILE 	INNER 	INOUT
+INSENSITIVE 	INSERT 	INT
+INT1 	INT2 	INT3
+INT4 	INT8 	INTEGER
+INTERVAL 	INTO 	IS
+ITERATE 	JOIN 	KEY
+KEYS 	KILL 	LABEL
+LEADING 	LEAVE 	LEFT
+LIKE 	LIMIT 	LINEAR
+LINES 	LOAD 	LOCALTIME
+LOCALTIMESTAMP 	LOCK 	LONG
+LONGBLOB 	LONGTEXT 	LOOP
+LOW_PRIORITY 	MATCH 	MEDIUMBLOB
+MEDIUMINT 	MEDIUMTEXT 	MIDDLEINT
+MINUTE_MICROSECOND 	MINUTE_SECOND 	MOD
+MODIFIES 	NATURAL 	NOT
+NO_WRITE_TO_BINLOG 	NULL 	NUMERIC
+ON 	OPTIMIZE 	OPTION
+OPTIONALLY 	OR 	ORDER
+OUT 	OUTER 	OUTFILE
+PRECISION 	PRIMARY 	PROCEDURE
+PURGE 	RAID0 	RANGE
+READ 	READS 	REAL
+REFERENCES 	REGEXP 	RELEASE
+RENAME 	REPEAT 	REPLACE
+REQUIRE 	RESTRICT 	RETURN
+REVOKE 	RIGHT 	RLIKE
+SCHEMA 	SCHEMAS 	SECOND_MICROSECOND
+SELECT 	SENSITIVE 	SEPARATOR
+SET 	SHOW 	SMALLINT
+SPATIAL 	SPECIFIC 	SQL
+SQLEXCEPTION 	SQLSTATE 	SQLWARNING
+SQL_BIG_RESULT 	SQL_CALC_FOUND_ROWS 	SQL_SMALL_RESULT
+SSL 	STARTING 	STRAIGHT_JOIN
+TABLE 	TERMINATED 	THEN
+TINYBLOB 	TINYINT 	TINYTEXT
+TO 	TRAILING 	TRIGGER
+TRUE 	UNDO 	UNION
+UNIQUE 	UNLOCK 	UNSIGNED
+UPDATE 	USAGE 	USE
+USING 	UTC_DATE 	UTC_TIME
+UTC_TIMESTAMP 	VALUES 	VARBINARY
+VARCHAR 	VARCHARACTER 	VARYING
+WHEN 	WHERE 	WHILE
+WITH 	WRITE 	X509
+XOR 	YEAR_MONTH 	ZEROFILL
